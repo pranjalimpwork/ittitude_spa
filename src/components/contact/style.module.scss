@@ -1,0 +1,103 @@
+@use "../../styles/colors.scss" as *;
+@use "../../styles/helpers" as *;
+
+.container {
+    position: relative;
+    background-color: $accent;
+}
+
+.wrapper {
+    padding: 200px 120px;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: $white;
+
+    @include mobile {
+        padding: 200px 20px;
+        padding-bottom: 100px;
+
+    }
+
+
+    .page-name {
+        font-weight: 500;
+        font-size: 18px;
+
+
+    }
+
+    .content {
+        max-width: 585px;
+
+
+        .title {
+            font-weight: 400;
+            font-size: 72px;
+            padding-top: 60px;
+
+
+            span {
+                font-weight: 700;
+                color: $accent;
+            }
+
+        }
+
+        .info {
+
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 400;
+                font-size: 34px;
+                color: $white;
+
+                span {
+                    font-size: 38px;
+                }
+
+            }
+        }
+
+    }
+
+    .img {
+        position: absolute;
+        right: 100px;
+        bottom: 0;
+        max-height: 100%;
+        z-index: 2;
+
+        @include mobile {
+            display: none;
+        }
+
+    }
+
+
+
+    .action {
+        padding-top: 60px;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+        }
+
+        span {
+            font-size: 32px;
+        }
+    }
+
+    b {
+        font-weight: 700;
+    }
+}

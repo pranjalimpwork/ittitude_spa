@@ -1,0 +1,88 @@
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:string';
+
+// @mixin font($family, $path, $weight, $style) {
+//   font-display: swap;
+//   font-family: $family;
+//   font-style: $style;
+//   font-weight: $weight;
+//   src: url($path + '.eot');
+//   src: url($path + '.eot?#iefix') format('embedded-opentype'),
+//     url($path + '.woff2') format('woff2'), url($path + '.woff') format('woff'),
+//     url($path + '.ttf') format('truetype'),
+//     url($path + '.svg#Manrope') format('svg');
+// }
+
+// @mixin font-family {
+//   @font-face {
+//     @include font(
+//       'Miss Bliss',
+//       'libs/styles/src/fonts/missbliss/400',
+//       400,
+//       normal
+//     );
+//   }
+//   @font-face {
+//     @include font(
+//       'Miss Bliss',
+//       'libs/styles/src/fonts/missbliss/500',
+//       500,
+//       normal
+//     );
+//   }
+//   @font-face {
+//     @include font(
+//       'Miss Bliss',
+//       'libs/styles/src/fonts/missbliss/600',
+//       600,
+//       normal
+//     );
+//   }
+//   @font-face {
+//     @include font(
+//       'Miss Bliss',
+//       'libs/styles/src/fonts/missbliss/700',
+//       700,
+//       normal
+//     );
+//   }
+//   @font-face {
+//     @include font(
+//       'Miss Bliss',
+//       'libs/styles/src/fonts/missbliss/800',
+//       800,
+//       normal
+//     );
+//   }
+// }
+
+@mixin weight() {
+  @each $weight in $weights {
+    .w#{$weight} {
+      font-weight: $weight;
+    }
+  }
+}
+
+@mixin font-sizes {
+  @each $size in $font-sizes {
+    .f#{$size} {
+      font-size: $size + px;
+    }
+  }
+}
+
+@mixin gradients {
+  @for $i from 1 through length($gradients) {
+    .grad#{$i} {
+      background: nth($gradients, $i);
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

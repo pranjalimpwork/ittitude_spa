@@ -1,0 +1,79 @@
+@use "../../styles/colors.scss" as *;
+@use "../../styles/helpers" as *;
+
+
+.container {
+    // min-height: 100vh;
+    position: relative;
+    background-color: $backgroundSecondary;
+}
+
+.wrapper {
+    padding-bottom: 200px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 200px 120px;
+    // position: relative;
+
+
+
+    @include mobile {
+        padding: 200px 20px;
+    }
+
+
+    .page-name {
+        font-weight: 500;
+        font-size: 18px;
+        color: $contentTertiary;
+
+    }
+
+    .content {
+        max-width: 784px;
+
+
+        .title {
+            font-weight: 400;
+            font-size: 72px;
+            padding-top: 60px;
+
+            span {
+                font-weight: 700;
+                color: $accent;
+            }
+
+        }
+
+    }
+
+    .img {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        max-height: 100%;
+        z-index: 2;
+
+        @include mobile {
+            display: none;
+        }
+
+    }
+
+    .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .action {
+        padding-top: 60px;
+        position: relative;
+        z-index: 7;
+    }
+}

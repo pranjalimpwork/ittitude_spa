@@ -1,0 +1,133 @@
+@use "../../styles/colors.scss" as *;
+@use "../../styles/helpers" as *;
+
+.container {
+    // min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px 120px;
+    text-align: center;
+
+    @include mobile {
+        padding: 200px 20px;
+        text-align: start;
+    }
+
+
+    .page-name {
+        font-weight: 500;
+        font-size: 18px;
+        color: $contentTertiary;
+    }
+
+    .content {
+        padding-top: 60px;
+
+        .title {
+            font-weight: 400;
+            font-size: 62px;
+
+            b {
+                font-weight: 700;
+            }
+
+            span {
+                font-weight: 700;
+                color: $accent;
+            }
+
+        }
+
+    }
+
+
+
+    .action {
+        padding-top: 60px;
+    }
+
+    .card-container {
+        display: flex;
+        padding-top: 60px;
+        gap: 10px;
+        justify-content: center;
+
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 282px;
+            height: 413px;
+            border: 2px solid $white;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+            cursor: pointer;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+                border-radius: 8px;
+            }
+
+            .overlay {
+                border-radius: 8px;
+                border-radius: 2px;
+                text-align: start;
+                padding: 20px;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #f553568f;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                color: $white;
+                transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+                transform: translateY(10px); // Slight shift for a smooth entrance
+
+                .info {
+                    .first {
+                        font-weight: 700;
+                        font-size: 42px;
+                    }
+
+                    .last,
+                    .title {
+                        font-weight: 500;
+                        font-size: 42px;
+                    }
+
+                }
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.05); // Slight zoom effect on hover
+                }
+
+                .overlay {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}

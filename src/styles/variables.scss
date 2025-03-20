@@ -1,0 +1,60 @@
+@use './colors.scss' as *;
+@use 'sass:math';
+@use 'sass:map';
+
+
+// Font-Sizes
+$font-x-small: 12px;
+$font-small: 14px;
+$font-medium: 16px;
+$font-large: 18px;
+$font-x-large: 20px;
+$font-xx-large: 22px;
+$font-xxx-large: 28px;
+$font-xxxx-large: 32px;
+
+// Font-Weights
+$x-lite: 300;
+$lite: 400;
+$lighter: 500;
+$regular: 600;
+$semi-bold: 700;
+$bold: 800;
+
+// Box-Shadows
+$box-shadow: 0px 4px 16px 0px #0000001f;
+$footer-box-shadow: 0px 0px 10.9px 0px #00000040;
+$player-bar-gradient: linear-gradient(180deg,
+    rgba($black, 0.05) 0%,
+    rgba($black, 0.25) 40%,
+    rgba($black, 0.5) 100%);
+
+@mixin scrollbar($thumbColor: transparent,
+  $trackColor: transparent,
+  $width: 0px) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumbColor $trackColor;
+
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    width: $width;
+    background-color: $trackColor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+    border-radius: math.div($width, 2);
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number)=='number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
