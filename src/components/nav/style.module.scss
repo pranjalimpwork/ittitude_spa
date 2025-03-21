@@ -7,7 +7,7 @@
     top: 0;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
     backdrop-filter: blur(30px);
-    z-index: 5;
+    z-index: 11;
 }
 
 .navbar {
@@ -45,7 +45,7 @@
         }
 
         .item {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 18px;
             color: $contentTertiary;
 
